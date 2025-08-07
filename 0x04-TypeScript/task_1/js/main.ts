@@ -7,7 +7,7 @@ export interface Teacher {
   [propName: string]: any;
 }
 
-export interface Directors extends Teacher {
+export interface Director extends Teacher {
   numberOfReports: number;
 }
 
@@ -21,7 +21,7 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-const director1: Directors = {
+const director1: Director = {
   firstName: "John",
   lastName: "Doe",
   location: "London",
