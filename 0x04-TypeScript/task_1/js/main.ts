@@ -7,9 +7,17 @@ export interface Teacher {
   [propName: string]: any;
 }
 
-export interface Directors extends Teacher {
+export interface Director extends Teacher {
   numberOfReports: number;
 }
+
+export interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+export const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
 
 const teacher3: Teacher = {
   firstName: "John",
@@ -21,7 +29,7 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-const director1: Directors = {
+const director1: Director = {
   firstName: "John",
   lastName: "Doe",
   location: "London",
@@ -30,3 +38,4 @@ const director1: Directors = {
 };
 
 console.log(director1);
+console.log(printTeacher("John", "Doe"));
