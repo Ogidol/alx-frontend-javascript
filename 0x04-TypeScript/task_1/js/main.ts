@@ -15,10 +15,15 @@ export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-export function printTeacher(firstName: string, lastName: string): string {
+export function printTeacher({
+  firstName,
+  lastName,
+}: {
+  firstName: string;
+  lastName: string;
+}): string {
   return `${firstName}. ${lastName}`;
 }
-
 const teacher3: Teacher = {
   firstName: "John",
   fullTimeEmployee: false,
@@ -38,4 +43,4 @@ const director1: Director = {
 };
 
 console.log(director1);
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
