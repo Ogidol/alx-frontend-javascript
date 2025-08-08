@@ -19,10 +19,14 @@ export interface printTeacherFunction {
 }
 
 // Function declaration required by checker
-export function printTeacher(firstName: string, lastName: string): string {
-  // This destructuring ensures "{ firstName, lastName }" appears in the file
-  const { firstName: fName, lastName: lName } = { firstName, lastName };
-  return `${fName.charAt(0)}. ${lName}`;
+export function printTeacher({
+  firstName,
+  lastName,
+}: {
+  firstName: string;
+  lastName: string;
+}): string {
+  return `${firstName}. ${lastName}`;
 }
 
 // Example Teacher object
@@ -46,4 +50,4 @@ const director1: Director = {
 console.log(director1);
 
 // Test call to printTeacher
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
