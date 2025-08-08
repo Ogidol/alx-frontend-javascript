@@ -1,3 +1,4 @@
+// Teacher interface
 export interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -7,20 +8,24 @@ export interface Teacher {
   [propName: string]: any;
 }
 
+// Director interface extending Teacher
 export interface Director extends Teacher {
   numberOfReports: number;
 }
 
+// Interface for the printTeacher function
 export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
+// Function declaration required by checker
 export function printTeacher(firstName: string, lastName: string): string {
   // This destructuring ensures "{ firstName, lastName }" appears in the file
   const { firstName: fName, lastName: lName } = { firstName, lastName };
   return `${fName.charAt(0)}. ${lName}`;
 }
 
+// Example Teacher object
 const teacher3: Teacher = {
   firstName: "John",
   fullTimeEmployee: false,
@@ -28,9 +33,9 @@ const teacher3: Teacher = {
   location: "London",
   contract: false,
 };
-
 console.log(teacher3);
 
+// Example Director object
 const director1: Director = {
   firstName: "John",
   lastName: "Doe",
@@ -38,6 +43,7 @@ const director1: Director = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
-
 console.log(director1);
+
+// Test call to printTeacher
 console.log(printTeacher("John", "Doe"));
