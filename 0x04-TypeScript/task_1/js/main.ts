@@ -24,6 +24,7 @@ export function printTeacher({
 }): string {
   return `${firstName}. ${lastName}`;
 }
+
 const teacher3: Teacher = {
   firstName: "John",
   fullTimeEmployee: false,
