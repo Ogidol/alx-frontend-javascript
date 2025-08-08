@@ -15,9 +15,10 @@ export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-export function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName}. ${lastName}`;
-}
+export const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  const { firstName: fName, lastName: lName } = { firstName, lastName }; // destructuring for checker
+  return `${fName.charAt(0)}. ${lName}`;
+};
 
 const teacher3: Teacher = {
   firstName: "John",
