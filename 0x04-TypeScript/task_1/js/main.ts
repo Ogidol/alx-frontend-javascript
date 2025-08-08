@@ -15,9 +15,9 @@ export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-export const printTeacher: printTeacherFunction = (firstName, lastName) => {
+export function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
 const teacher3: Teacher = {
   firstName: "John",
