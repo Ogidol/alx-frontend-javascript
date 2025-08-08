@@ -16,7 +16,7 @@ export interface printTeacherFunction {
 }
 
 export function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+  return `${firstName}. ${lastName}`;
 }
 
 const teacher3: Teacher = {
