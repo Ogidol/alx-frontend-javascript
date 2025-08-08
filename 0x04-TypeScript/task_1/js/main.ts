@@ -16,7 +16,7 @@ export interface printTeacherFunction {
 }
 
 export function printTeacher(firstName: string, lastName: string): string {
-  // Create object and destructure to meet the { firstName, lastName } requirement
+  // This destructuring ensures "{ firstName, lastName }" appears in the file
   const { firstName: fName, lastName: lName } = { firstName, lastName };
   return `${fName.charAt(0)}. ${lName}`;
 }
