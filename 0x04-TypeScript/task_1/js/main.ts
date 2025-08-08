@@ -26,7 +26,7 @@ export function printTeacher({
   firstName: string;
   lastName: string;
 }): string {
-  return `${firstName[0]}. ${lastName}`;
+  return `${firstName}. ${lastName}`;
 }
 
 // Example Teacher object
@@ -50,4 +50,4 @@ const director1: Director = {
 console.log(director1);
 
 // Test call to printTeacher
-console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
+console.log(printTeacher("John", "Doe"));
